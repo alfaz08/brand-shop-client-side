@@ -14,7 +14,7 @@ const Navbar = () => {
 
 
   return (
-    <div>
+    <div className="sticky-navbar">
       <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -25,7 +25,7 @@ const Navbar = () => {
        {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <img className="hidden md:block w-24 rounded-full" src="https://i.ibb.co/LvCngJ2/Fashion-Style-1.png" alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -33,7 +33,8 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  <button className="btn bg-purple-500 text-white hover:bg-[#ecb3ff] hover:text-black">Primary</button>
+  
   </div>
 </div>
     </div>
