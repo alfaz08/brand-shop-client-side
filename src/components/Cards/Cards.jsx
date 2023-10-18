@@ -15,6 +15,8 @@ const Cards= () => {
 
   return (
     <div>
+
+    
        <div className="mt-2">
       <h2 className="text-center font-semibold text-5xl mt-4">Our Brand List</h2>
       <div className="grid justify-center mt-2">
@@ -28,6 +30,7 @@ const Cards= () => {
         }
       </div>
       </div>
+     
     </div>
   );
 };

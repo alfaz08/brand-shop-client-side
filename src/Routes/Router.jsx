@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
+import CardDetails from "../Pages/CardDetails/CardDetails";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
       path: "/cart",
        element: <MyCart></MyCart>,
+    },
+    {
+      path: "/carddetails",
+      element: <CardDetails></CardDetails>
     }
 
    
