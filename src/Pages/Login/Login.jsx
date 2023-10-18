@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
 import { FaGooglePlusG } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
+
+  const {googleLogin} =useContext(AuthContext)
+
+  const handleSocialLogin = (media)=>{
+    media()
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 md:ml-32">
      <div className="hidden md:block ">
@@ -29,7 +40,7 @@ const Login = () => {
          
         </div>
         <div className="form-control mt-6">
-        <button className="btn  bg-purple-500 text-white hover:bg-[#ecb3ff] hover:text-black">Login</button>
+        <button  className="btn  bg-purple-500 text-white hover:bg-[#ecb3ff] hover:text-black">Login</button>
         </div>
       </form>
 
@@ -47,7 +58,7 @@ const Login = () => {
       <hr className="ml-2 mr-4 w-36 border-black"/>
      </div>
      <div className="text-center mb-4 mt-4 ">
-      <button  className=" text-white btn bg-purple-500 hover:bg-[#ecb3ff] hover:text-black"><FaGooglePlusG  className="text-white  text-2xl "></FaGooglePlusG>Login with google</button>
+      <button onClick={()=>handleSocialLogin(googleLogin)}  className=" text-white btn bg-purple-500 hover:bg-[#ecb3ff] hover:text-black"><FaGooglePlusG  className="text-white  text-2xl "></FaGooglePlusG>Login with google</button>
      </div>
 
 

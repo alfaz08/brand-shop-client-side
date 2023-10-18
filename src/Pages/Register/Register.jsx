@@ -1,7 +1,55 @@
 import { Link } from "react-router-dom";
 import { FaGooglePlusG } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import { ToastContainer, toast } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
+
+  const {googleLogin} =useContext(AuthContext)
+  const {createUser}=useContext(AuthContext)
+  const [error,setError]=useState("")
+
+
+  const handleSocialLogin = (media)=>{
+    media()
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  }
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const email =form.email.value;
+     const password =form.password.value;
+     const name =form.name.value;
+     const photo =form.photo.value;
+      console.log(email,password,name,photo);
+
+
+      if((!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) ){
+        const errorMessage = "Password must be at least eight characters long, with at least one letter and one digit."
+       setError(errorMessage);
+       toast(errorMessage)
+      }
+      else{
+        setError('')
+        createUser(email,password)
+        .then(res=>console.log(res.user))
+        .catch(error=>{
+          console.error(error.message)
+          toast(error.message)
+        })
+      }
+  
+  
+}
+  
+
+  
+
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 md:ml-80">
      <div className="">
@@ -11,30 +59,30 @@ const Register = () => {
     <img className="hidden md:block w-80" src="https://i.ibb.co/brfMXPh/203-2035339-register-user-register-online-icon-png.jpg" alt="" />
     </div>
     <div className="card w-full shadow-2xl bg-purple-400">
-      <form className="card-body">
+      <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Your Name</span>
           </label>
-          <input type="email" placeholder="Name" className="input input-bordered" required />
+          <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Photo URL</span>
           </label>
-          <input type="email" placeholder="photo" className="input input-bordered" required />
+          <input type="text" name="photo" placeholder="photo" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" name="email" placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
         
         </div>
         <div className="form-control mt-6">
@@ -54,7 +102,7 @@ const Register = () => {
       <hr className="ml-2 mr-4 w-36 border-black"/>
      </div>
      <div className="text-center mb-4 mt-4 ">
-      <button  className=" text-white btn bg-purple-500 hover:bg-[#ecb3ff] hover:text-black"><FaGooglePlusG  className="text-white  text-2xl "></FaGooglePlusG>Login with google</button>
+      <button onClick={()=>handleSocialLogin(googleLogin)}  className=" text-white btn bg-purple-500 hover:bg-[#ecb3ff] hover:text-black"><FaGooglePlusG  className="text-white  text-2xl "></FaGooglePlusG>Login with google</button>
      </div>
 
 
@@ -71,7 +119,7 @@ const Register = () => {
      
      </div>
 
-
+    <ToastContainer/>
    </div>
   );
 };
