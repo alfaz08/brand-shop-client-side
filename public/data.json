@@ -1,0 +1,32 @@
+[
+  {
+      "id": "1",
+      "brand": "Adidas",
+      "image": "https://i.ibb.co/FgGt1nh/Adidas-Logo-Vector-scaled-removebg-preview.png"
+  },
+  {
+      "id": "2",
+      "brand": "Puma",
+      "image": "https://i.ibb.co/TYNBZ6p/puma-logo-black-symbol-with-name-clothes-design-icon-abstract-football-illustration-with-white-backg.png"
+  },
+  {
+      "id": "3",
+      "brand": "Nike",
+      "image": "https://i.ibb.co/4KYKj5g/Nike-Logo-removebg-preview.png"
+  },
+  {
+      "id": "4",
+      "brand": "Calvin Klein",
+      "image": "https://i.ibb.co/R6Bg8Tn/calvin-klein-logo-symbol-brand-clothes-with-name-design-fashion-illustration-free-vector-removebg-pr.png"
+  },
+  {
+      "id": "5",
+      "brand": "Zara",
+      "image": "https://i.ibb.co/gWcN21t/zara-logo-0-removebg-preview.png"
+  },
+  {
+      "id": "6",
+      "brand": "Louis Vuitton",
+      "image": "https://i.ibb.co/qNDx0D6/louis-vuitton-1-logo.png"
+  }
+]
