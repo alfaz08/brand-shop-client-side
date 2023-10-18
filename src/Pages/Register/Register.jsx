@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FaGooglePlusG } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useState} from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Register = () => {
 
   const {googleLogin} =useContext(AuthContext)
   const {createUser}=useContext(AuthContext)
-  const [error,setError]=useState("")
+  const [error,setError] =useState("")
+  const [loggedIn,setLoggedIn] =useState(false)
+
 
 
   const handleSocialLogin = (media)=>{
@@ -18,30 +21,46 @@ const Register = () => {
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
   }
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-    const form = e.target;
-    const email =form.email.value;
-     const password =form.password.value;
-     const name =form.name.value;
-     const photo =form.photo.value;
+    const name= e.target.name.value;
+    const photo= e.target.photo.value;
+    const email= e.target.email.value;
+    const password= e.target.password.value;
+
       console.log(email,password,name,photo);
 
-
-      if((!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) ){
-        const errorMessage = "Password must be at least eight characters long, with at least one letter and one digit."
+      if((!/^(?=.*[A-Z])(?=.*[\W_]).{6,}$/.test(password)) ){
+        const errorMessage = "Password must be at least eight characters long with at least one Capital letter and one special character."
        setError(errorMessage);
        toast(errorMessage)
+       
+       const passwordInput = document.querySelector('input[name="password"]');
+      if (passwordInput) {
+        passwordInput.value = '';
+      }
       }
       else{
         setError('')
         createUser(email,password)
-        .then(res=>console.log(res.user))
+        .then(res=>{
+          console.log(res.user)
+          toast.success('Registration Successful') 
+          setLoggedIn(true)
+        })
         .catch(error=>{
           console.error(error.message)
-          toast(error.message)
+          toast.error(error.message)
         })
+  
       }
+  
+
+   
+  
+      
+    
   
   
 }
@@ -51,7 +70,11 @@ const Register = () => {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 md:ml-80">
+    <div>
+      {
+        loggedIn && <Navigate to="/"></Navigate>
+      }
+      <div className="grid grid-cols-1 md:grid-cols-4 md:ml-80">
      <div className="">
      <div className="hero">
   <div className="hero-content flex-col md:w-[700px]">
@@ -121,6 +144,7 @@ const Register = () => {
 
     <ToastContainer/>
    </div>
+    </div>
   );
 };
 

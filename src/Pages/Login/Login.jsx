@@ -1,15 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGooglePlusG } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
 
   const {googleLogin} =useContext(AuthContext)
+  const {signIn}=useContext(AuthContext)
+  const navigate=useNavigate()
+  const location=useLocation()
 
   const handleSocialLogin = (media)=>{
     media()
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
+  }
+
+  const handleSubmit =(e)=>{
+    
+
+    e.preventDefault();
+    const email= e.target.email.value;
+    const password= e.target.password.value;
+
+    signIn(email,password)
+   .then(res=>{
+    console.log(res.user)
+    navigate(location?.state?location.state:'/')
+   })
+   .catch(error=>console.log(error))
+    
   }
 
   return (
@@ -25,18 +44,18 @@ const Login = () => {
       <p className="py-6">Welcome to our website and explore it</p>
     </div>
     <div className="card flex-shrink-0 w-full shadow-2xl bg-purple-400">
-      <form className="card-body">
+      <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" name="email" placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
          
         </div>
         <div className="form-control mt-6">
