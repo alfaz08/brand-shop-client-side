@@ -1,13 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGooglePlusG } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { ToastContainer, toast } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
+
+
 const Login = () => {
 
   const {googleLogin} =useContext(AuthContext)
   const {signIn}=useContext(AuthContext)
   const navigate=useNavigate()
   const location=useLocation()
+  const [loginError,setLoginError] =useState('')
 
   const handleSocialLogin = (media)=>{
     media()
@@ -27,7 +32,12 @@ const Login = () => {
     console.log(res.user)
     navigate(location?.state?location.state:'/')
    })
-   .catch(error=>console.log(error))
+   .catch(error=>{
+    console.log(error)
+    setLoginError(error.message)
+    toast.error(loginError)
+    e.target.reset()
+   })
     
   }
 
@@ -88,10 +98,11 @@ const Login = () => {
 </div>
 
 
+
      </div>
 
-
-
+     <ToastContainer></ToastContainer>
+ 
     </div>
   );
 };

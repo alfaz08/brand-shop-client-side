@@ -8,6 +8,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import CardDetails from "../Pages/CardDetails/CardDetails";
 import PrivateRoute from "./PrivateRoute";
+import Contact from "../Pages/Contact/Contact";
 const router = createBrowserRouter([
   {
    path: "/",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     {
       path: "/carddetails",
       element: <PrivateRoute> <CardDetails></CardDetails></PrivateRoute>
+    },
+    {
+      path:"/contact",
+      element: <Contact></Contact>
     }
 
    
