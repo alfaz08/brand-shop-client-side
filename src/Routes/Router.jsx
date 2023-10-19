@@ -36,12 +36,14 @@ const router = createBrowserRouter([
        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
     },
     {
-      path: "/carddetails",
-      element: <PrivateRoute> <CardDetails></CardDetails></PrivateRoute>
+      path: "/carddetails/:id",
+      element: <PrivateRoute> <CardDetails></CardDetails></PrivateRoute>,
+      loader:()=>fetch('http://localhost:5000/products')
     },
     {
       path:"/contact",
-      element: <Contact></Contact>
+      element: <Contact></Contact>,
+      
     }
 
    

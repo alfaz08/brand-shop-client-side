@@ -9,14 +9,20 @@ const Navbar = () => {
   
  const navLinks = <>
    <li><NavLink   to="/">Home</NavLink></li>
-   <li><NavLink to="/login">Login</NavLink></li>
-   <li><NavLink to="/contact">Contact</NavLink></li>
+   {
+      user ? null :<li><NavLink to="/login">Login</NavLink></li>
+    }
+    {
+      user ? null :<li><NavLink to="/register">Register</NavLink></li>
+    }
+   
    {
     user && <>
     <li><NavLink to="/product">Add Product</NavLink></li>
     <li><NavLink to="/cart">My Cart</NavLink></li>
     </>
    }
+   <li><NavLink to="/contact">Contact</NavLink></li>
  </>
 
  const handleLogOut=()=>{

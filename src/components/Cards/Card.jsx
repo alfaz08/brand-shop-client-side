@@ -5,7 +5,7 @@ const Card = ({card}) => {
 
   return (
     <div>
-    <Link  to="/carddetails" >
+    <Link  to={`/carddetails/${id}`} >
     
     <div className="card bg-purple-300 md:h-[450px] shadow-xl image-full hover:bg-purple-400 hover:text-black">
   <figure><img src={image} alt="Shoes" /></figure>

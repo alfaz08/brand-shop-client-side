@@ -11,9 +11,10 @@ const AddProduct = () => {
     const brand = form.brand.value;
     const rating = form.rating.value;
     const description = form.des.value;
+    const price = form.price.value;
     const type = form.type.value;
     
-    const newProduct={image,name,brand,rating,description,type};
+    const newProduct={image,name,brand,rating,description,type,price};
     console.log(newProduct); 
     // //reset from after submission
     //  form.reset()
