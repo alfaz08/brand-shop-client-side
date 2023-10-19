@@ -32,7 +32,9 @@ const Details = ({item}) => {
 
    </Link>
     
+    <Link to={`/update/${_id}`}>
     <button className="btn bg-purple-400 font-bold">Product Update</button>
+    </Link>
    </div>
 
   </div>
