@@ -1,4 +1,4 @@
-import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const Details = ({item}) => {
 
@@ -8,8 +8,8 @@ const Details = ({item}) => {
   return (
     <div >
       <h2>
-      <div className="card h-96 bg-purple-100 shadow-xl">
-  <figure><img className=" h-52 w-full" src={image} alt="Shoes" /></figure>
+      <div className="card bg-purple-100 shadow-xl">
+  <figure><img className="h-80 w-full" src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title font-semibold">
       {name}
@@ -20,17 +20,27 @@ const Details = ({item}) => {
       <h2 className="text-xl font-semibold">Brand Name: {brand}</h2>
     </div>
     <div>
-    <h2 className="text-xl font-semibold">Price: {price}$</h2>
+    <h2 className="text-xl font-semibold">Price: ${price}</h2>
     </div>
     <div>
-    <Rating
-  placeholderRating={3.5}
-  emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
-  placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
-  fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
-/>
+    <h2>Rating:{rating} star</h2>
     </div>
+
+    <div className="flex justify-around">
+   <Link to={`/productdetails/${_id}`}>
+   <button className="btn bg-purple-400 font-bold">Product Details</button>
+
+   </Link>
+    
+    <button className="btn bg-purple-400 font-bold">Product Update</button>
+   </div>
+
   </div>
+   
+   
+
+
+
 </div>
       </h2>
     </div>
