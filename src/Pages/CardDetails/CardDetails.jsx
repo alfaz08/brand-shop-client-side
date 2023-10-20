@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Details from "./Details";
 
+import Slider from "../../components/Slider/Slider";
 
 const CardDetails = () => {
 
@@ -24,12 +25,12 @@ const CardDetails = () => {
     <div>
    
 
-  sdsakdh
+  <Slider></Slider>
 
 
 
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
     
     {
       id=== '1'? 
