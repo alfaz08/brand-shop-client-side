@@ -3,7 +3,7 @@ import Cards from "../../components/Cards/Cards";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Footer from "../../components/Footer/footer";
 import Member from "../../components/members/Member";
-
+import ChooseUs from "../../components/ChooseUs/ChooseUs";
 
 
 
@@ -25,6 +25,7 @@ const Home = () => {
           <Sidebar></Sidebar>
         </div>
       </div>
+      <ChooseUs></ChooseUs>
       <Member></Member>
       <Footer></Footer>
     </div>
