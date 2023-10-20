@@ -6,7 +6,7 @@ const SingleProductDetails = ({item}) => {
   const {_id,brand,description,image,name,rating,type,price}=item
   
    const handleCart=()=>{
-      const newCart={_id,brand,description,image,name,rating,type,price}
+      const newCart={brand,description,image,name,rating,type,price}
      console.log(newCart);
      fetch('http://localhost:5000/cart',{
       method:'POST',

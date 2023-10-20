@@ -35,38 +35,76 @@ const CardDetails = () => {
     {
       id=== '1'? 
       (
-          filterData1.map(item=> <Details key={item._id} item={item}></Details> ) 
-      ):
+        
+        filterData1.length>0 ?
+         filterData1.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       id==='2'? 
       (
         
-          filterData2.map(item=> <Details key={item._id} item={item}></Details> ) 
-      
-      ):
+        filterData2.length>0 ?
+         filterData2.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       id==='3'? 
       (
         
-          filterData3.map(item=> <Details key={item._id} item={item}></Details> ) 
-      
-      ):
+        filterData3.length>0 ?
+         filterData3.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       id==='4'? 
       (
         
-          filterData4.map(item=> <Details key={item._id} item={item}></Details> ) 
-      
-      ):
+        filterData4.length>0 ?
+         filterData4.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       id==='5'? 
       (
         
-          filterData5.map(item=> <Details key={item._id} item={item}></Details> ) 
-      
-      ):
+        filterData5.length>0 ?
+         filterData5.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       id==='6'? 
       (
         
-          filterData6.map(item=> <Details key={item._id} item={item}></Details> ) 
-      
-      ):
+        filterData6.length>0 ?
+         filterData6.map(item=> <Details key={item._id} item={item}></Details> ) 
+         :
+        <div>
+        <h2 className="mt-4 text-2xl font-bold  ml-10">
+          Opps Sorry!!! All Products has been sold out.
+        </h2>
+        </div>
+         ):
       null
     }
   </div>

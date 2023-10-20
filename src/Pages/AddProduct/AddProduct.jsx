@@ -8,7 +8,7 @@ const AddProduct = () => {
     const form = event.target
     const image = form.image.value;
     const name = form.name.value;
-    const brand = form.brand.value;
+    const brand = form.brand.value.toLowerCase();
     const rating = form.rating.value;
     const description = form.des.value;
     const price = form.price.value;

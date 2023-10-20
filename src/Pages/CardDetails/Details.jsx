@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Details = ({item}) => {
 
+  
   const {_id,brand,description,image,name,rating,type,price}=item
  
   console.log(item);

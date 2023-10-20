@@ -11,7 +11,7 @@ const Member = () => {
       
  <img src="https://i.ibb.co/Fby7Jx3/istockphoto-1413766112-612x612.jpg" alt="Shoes" className="w-[200px] h-[200px] ml-8 rounded-full " />
   <h2 className="font-bold text-2xl ml-20 mt-4">Arthur</h2>
-  <h2 className="font-bold mt-2 text-2xl">Chief Excutive Officer <br /> Corporate Event Solution</h2>
+  <h2 className="font-bold mt-2 text-2xl">Chief Excutive Officer <br /> Stylish Fashion Hub</h2>
  </div>
   <div className="hidden md:grid justify-center  mt-2">
       <hr className=" w-1 h-72 ml-8 border-8 border-purple-400"/>
@@ -62,7 +62,7 @@ const Member = () => {
         <div className="">
         <img src="https://i.ibb.co/QcMXqJ9/istockphoto-1297832726-612x612.jpg" alt="Shoes" className="w-[200px] h-[200px] rounded-full  mx-auto" />
         <h2 className="font-bold text-center" >Curran</h2>
-  <h2 className="font-bold mt-2 text-center">Chief Event Manager</h2>
+  <h2 className="font-bold mt-2 text-center">Chief Fashion Manager</h2>
         </div>
 
         

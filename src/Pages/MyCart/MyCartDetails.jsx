@@ -5,10 +5,40 @@ import Swal from "sweetalert2";
 const MyCartDetails = ({item}) => {
   const {_id,brand,description,image,name,rating,type,price}=item
 
+  
 
-  // const handleDelete=(_id)=>{
-  //   console.log(_id);
-  // }
+  const handleDelete=_id=>{
+    console.log(_id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+  }).then((result)=>{
+    if(result.isConfirmed){
+     fetch(`http://localhost:5000/cart/${_id}`,{
+      method:'DELETE'
+     })
+     .then(res=>res.json())
+     .then(data=>{
+      console.log(data);
+        Swal.fire(
+          'Deleted!',
+          'Your product has been deleted',
+          'success'
+        )
+      
+     })
+    }
+  })
+
+
+
+
+  }
 
 
 
@@ -36,7 +66,7 @@ const MyCartDetails = ({item}) => {
    <h2 className="font-bold text-xl mt-4">Price: ${price}</h2>
    <h2 className="  mt-4">About Product: {description}</h2>
    
-   {/* <button onClick={handleDelete}  className="mt-4 btn bg-purple-400 font-bold">Delete</button> */}
+   <button onClick={()=>handleDelete(_id)}  className="mt-4 btn bg-purple-400 font-bold">Delete</button>
 
    
    <div>
