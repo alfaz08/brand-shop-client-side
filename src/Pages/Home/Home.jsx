@@ -3,9 +3,19 @@ import Cards from "../../components/Cards/Cards";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Footer from "../../components/Footer/footer";
 import Member from "../../components/members/Member";
+
+
+
+
 const Home = () => {
+ 
+  
+
+
   return (
     <div>
+        
+        
       <Banner></Banner>
       <div className="grid grid-cols-4">
         <div className=" col-span-3">

@@ -16,13 +16,15 @@
   },
   {
       "id": "4",
-      "brand": "Calvin Klein",
-      "image": "https://i.ibb.co/R6Bg8Tn/calvin-klein-logo-symbol-brand-clothes-with-name-design-fashion-illustration-free-vector-removebg-pr.png"
+      "brand": "Zara",
+      "image": "https://i.ibb.co/gWcN21t/zara-logo-0-removebg-preview.png"
   },
   {
       "id": "5",
-      "brand": "Zara",
-      "image": "https://i.ibb.co/gWcN21t/zara-logo-0-removebg-preview.png"
+      
+      "brand": "Calvin Klein",
+      "image": "https://i.ibb.co/R6Bg8Tn/calvin-klein-logo-symbol-brand-clothes-with-name-design-fashion-illustration-free-vector-removebg-pr.png"
+      
   },
   {
       "id": "6",

@@ -1,11 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Home from "../../Pages/Home/Home";
 const Navbar = () => {
   
   const {user,logOut} =useContext(AuthContext)
+
+  
+ 
   
  const navLinks = <>
    <li><NavLink   to="/">Home</NavLink></li>
@@ -75,6 +79,9 @@ const Navbar = () => {
       <Link to="/login"><button className="btn  bg-purple-400 text-white hover:bg-[#ecb3ff] hover:text-black">Login</button></Link>
     }
   </div>
+
+   
+
 
 </div>
     </div>

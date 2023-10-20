@@ -1,8 +1,40 @@
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const SingleProductDetails = ({item}) => {
   const {_id,brand,description,image,name,rating,type,price}=item
   
+   const handleCart=()=>{
+      const newCart={_id,brand,description,image,name,rating,type,price}
+     console.log(newCart);
+     fetch('http://localhost:5000/cart',{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(newCart)
+     })
+     .then(res=>res.json())
+     .then(data=>{
+      console.log(data);
+      if(data.insertedId){
+        Swal.fire(
+          {
+            title: 'Success!',
+        text: 'User added successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+
+          }
+        )
+      }
+     })
+    }
+
+
+
+
   return (
     // <div className="md:flex">
     //   <div className="">
@@ -21,7 +53,7 @@ const SingleProductDetails = ({item}) => {
     </div>
 
     <div>
-      <h1 className="font-bold text-xl">{name}</h1>
+      <h1 className="font-bold text-xl">Product Name: {name}</h1>
       <h1 className="font-bold text-xl mt-4">Brand Name: {brand}</h1>
      
        <h2 className="font-bold text-xl mt-4 ">Product Type: {type}</h2>
@@ -67,7 +99,7 @@ const SingleProductDetails = ({item}) => {
   className=" px-4 py-2 border border-purple-400 rounded-l-md focus:outline-none focus:ring focus:border-blue-300 flex-grow"
   placeholder="Enter Your Coupon Code"
 />
-<button
+<button 
   className="px-4 py-2 bg-purple-400 font-bold rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring focus:bg-blue-600"
 >
   Apply
@@ -75,9 +107,9 @@ const SingleProductDetails = ({item}) => {
 </div>
  
 <div>
-       <Link to="/cart"> 
-       <button className="btn bg-purple-400 mt-4"> Add to Cart</button>
-       </Link>
+      
+       <button onClick={handleCart} className="btn bg-purple-400 mt-4"> Add to Cart</button>
+      
        </div>
        </div>
        

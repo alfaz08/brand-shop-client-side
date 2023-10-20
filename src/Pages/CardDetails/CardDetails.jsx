@@ -21,21 +21,54 @@ const CardDetails = () => {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div>
+   
+
+  sdsakdh
+
+
+
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+    {
+      id=== '1'? 
+      (
+          filterData1.map(item=> <Details key={item._id} item={item}></Details> ) 
+      ):
+      id==='2'? 
+      (
+        
+          filterData2.map(item=> <Details key={item._id} item={item}></Details> ) 
       
-      {
-        id=== '1'? 
-        (
-            filterData1.map(item=> <Details key={item._id} item={item}></Details> ) 
-        ):
-        id==='2'? 
-        (
-          (
-            filterData2.map(item=> <Details key={item._id} item={item}></Details> ) 
-        )
-        ):
-        null
-      }
+      ):
+      id==='3'? 
+      (
+        
+          filterData3.map(item=> <Details key={item._id} item={item}></Details> ) 
+      
+      ):
+      id==='4'? 
+      (
+        
+          filterData4.map(item=> <Details key={item._id} item={item}></Details> ) 
+      
+      ):
+      id==='5'? 
+      (
+        
+          filterData5.map(item=> <Details key={item._id} item={item}></Details> ) 
+      
+      ):
+      id==='6'? 
+      (
+        
+          filterData6.map(item=> <Details key={item._id} item={item}></Details> ) 
+      
+      ):
+      null
+    }
+  </div>
     </div>
   );
 };
