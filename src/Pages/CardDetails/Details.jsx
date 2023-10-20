@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+import Rating from 'react-rating-stars-component';
+
+
 const Details = ({item}) => {
 
   
@@ -23,8 +26,18 @@ const Details = ({item}) => {
     <div>
     <h2 className="text-xl font-semibold">Price: ${price}</h2>
     </div>
-    <div>
-    <h2>Rating:{rating} star</h2>
+    <div className="flex">
+    <h2 className="font-bold mt-2">Rating : 
+    
+    </h2>
+    <Rating
+      count={5} // Number of stars
+      value={rating} // The initial rating value
+      edit={false} // Read-only
+      size={24} // Size of the stars
+      activeColor="#b182e3" // Color of the selected stars
+    />
+
     </div>
 
     <div className="flex justify-around">
