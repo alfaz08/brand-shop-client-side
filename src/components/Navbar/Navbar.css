@@ -1,0 +1,14 @@
+.dark {
+  --bg-color: #000;
+  --text-color: #fff;
+}
+
+.light {
+  --bg-color: #fff;
+  --text-color: #000;
+}
+
+header {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

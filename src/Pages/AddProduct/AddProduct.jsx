@@ -20,7 +20,7 @@ const AddProduct = () => {
     //  form.reset()
  
 
-    fetch('http://localhost:5000/products',{
+    fetch('https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/products',{
       method:'POST',
       headers:{
         'content-type':'application/json'

@@ -38,23 +38,23 @@ const router = createBrowserRouter([
     {
       path: "/cart",
        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-       loader:()=>fetch('http://localhost:5000/cart')
+       loader:()=>fetch('https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/cart')
     },
     
     {
       path: "/carddetails/:id",
       element: <PrivateRoute> <CardDetails></CardDetails></PrivateRoute>,
-      loader:()=>fetch('http://localhost:5000/products')
+      loader:()=>fetch('https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/products')
     },
     {
       path: "/productdetails/:id",
       element: <PrivateRoute> <ProductDetails></ProductDetails> </PrivateRoute>,
-      loader:()=>fetch('http://localhost:5000/products')
+      loader:()=>fetch('https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/products')
     },
     {
     path:"/update/:id",
     element: <PrivateRoute> <UpdateProduct></UpdateProduct> </PrivateRoute>,
-    loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+    loader:({params})=>fetch(`https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/products/${params.id}`)
     },
     {
       path:"/contact",

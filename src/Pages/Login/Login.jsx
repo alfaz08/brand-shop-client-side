@@ -35,7 +35,7 @@ const Login = () => {
    .catch(error=>{
     console.log(error)
     setLoginError(error.message)
-    toast.error(loginError)
+    toast.error(error.message)
     e.target.reset()
    })
     

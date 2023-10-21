@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteCard = () => {
   const handleDelete=(_id)=>{
     console.log(_id);
-    fetch(`http://localhost:5000/cart/${_id}`,{
+    fetch(`https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/cart/${_id}`,{
       method: 'DELETE'
 
     })

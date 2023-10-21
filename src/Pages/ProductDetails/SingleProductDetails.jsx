@@ -16,7 +16,7 @@ const SingleProductDetails = ({item}) => {
       const newCart={brand,description,image,name,rating,type,price,email}
   
      
-     fetch('http://localhost:5000/cart',{
+     fetch('https://brand-shop-server-ij8udurzt-alfaz-hossains-projects.vercel.app/cart',{
       method:'POST',
       headers:{
         'content-type':'application/json'
