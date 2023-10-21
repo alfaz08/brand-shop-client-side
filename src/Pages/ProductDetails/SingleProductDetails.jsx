@@ -1,13 +1,21 @@
 import Swal from "sweetalert2";
-
+import Rating from 'react-rating-stars-component';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 const SingleProductDetails = ({item}) => {
   const {_id,brand,description,image,name,rating,type,price}=item
+  const {user}=useContext(AuthContext)
+  const email=user.email;
   
    const handleCart=()=>{
-      const newCart={brand,description,image,name,rating,type,price}
-     console.log(newCart);
+   
+
+
+      const newCart={brand,description,image,name,rating,type,price,email}
+  
+     
      fetch('http://localhost:5000/cart',{
       method:'POST',
       headers:{
@@ -59,8 +67,21 @@ const SingleProductDetails = ({item}) => {
        <h2 className="font-bold text-xl mt-4 ">Product Type: {type}</h2>
 
        <h2 className="font-bold text-xl mt-4">Price: ${price}</h2>
-       <h2 className="  mt-4">About Product: {description}</h2>
-       
+      
+       <div className="flex">
+    <h2 className="font-bold mt-2">Rating : 
+    
+    </h2>
+    <Rating
+      count={5} 
+      value={rating} 
+      edit={false} 
+      size={24} 
+      activeColor="#b182e3" 
+    />
+
+    </div>
+    <h2 className=" text-xl mt-4">About Product: {description}</h2>
        <select name="type" className="input input-bordered mt-4 border-purple-400" required>
                 <option value="select type" >
                     -- Select Size --

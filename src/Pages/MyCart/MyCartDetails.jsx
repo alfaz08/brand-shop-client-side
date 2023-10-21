@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import Rating from 'react-rating-stars-component';
 
-const MyCartDetails = ({item}) => {
+const MyCartDetails = ({item,carts,setCarts}) => {
   const {_id,brand,description,image,name,rating,type,price}=item
 
   
@@ -25,11 +26,15 @@ const MyCartDetails = ({item}) => {
      .then(res=>res.json())
      .then(data=>{
       console.log(data);
-        Swal.fire(
-          'Deleted!',
-          'Your product has been deleted',
-          'success'
-        )
+        if(data.deletedCount>0){
+          Swal.fire(
+            'Deleted!',
+            'Your product has been deleted',
+            'success'
+          )
+          const remaining = carts.filter(cart=> cart._id !== _id);
+          setCarts(remaining)
+        }
       
      })
     }
@@ -64,7 +69,20 @@ const MyCartDetails = ({item}) => {
    <h2 className="font-bold text-xl mt-4 ">Product Type: {type}</h2>
 
    <h2 className="font-bold text-xl mt-4">Price: ${price}</h2>
-   <h2 className="  mt-4">About Product: {description}</h2>
+   <div className="flex">
+    <h2 className="font-bold mt-2">Rating : 
+    
+    </h2>
+    <Rating
+      count={5} 
+      value={rating} 
+      edit={false} 
+      size={24} 
+      activeColor="#b182e3" 
+    />
+
+    </div>
+  
    
    <button onClick={()=>handleDelete(_id)}  className="mt-4 btn bg-purple-400 font-bold">Delete</button>
 

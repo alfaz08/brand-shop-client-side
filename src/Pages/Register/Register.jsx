@@ -33,7 +33,7 @@ const Register = () => {
       console.log(email,password,name,photo);
 
       if((!/^(?=.*[A-Z])(?=.*[\W_]).{6,}$/.test(password)) ){
-        const errorMessage = "Password must be at least eight characters long with at least one Capital letter and one special character."
+        const errorMessage = "Password must be at least six characters long with at least one Capital letter and one special character."
        setError(errorMessage);
        toast(errorMessage)
        

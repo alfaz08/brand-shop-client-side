@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* src/index.css */
+/* Light Mode */
+/* src/index.css */
+:root {
+  --background-color-light: white;
+  --text-color-light: black;
+  --background-color-dark: black;
+  --text-color-dark: white;
+}
+
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+/* Dark mode styles */
+body.dark {
+  --background-color-light: black;
+  --text-color-light: white;
+  --background-color-dark: #333; /* You can adjust this color as needed for the dark theme */
+  --text-color-dark: white;
+}
+
+.navbar {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.navbar.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+
+
