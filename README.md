@@ -17,4 +17,14 @@
 - cart is specificed based on logged user email means every user has its own cart.
 - Responsive for all device.
 
+## Technology
+
+- Front End: JavaScript,React,Tailwind.
+- Back End: MongoDB,NodeJS,ExpressJS.
+- Tools: Firebase,Vercel.
+
 ## Live Link: https://brand-shop-c4c2e.web.app/
+
+
+
+
